@@ -1,0 +1,93 @@
+
+Resumo do modelo
++++++++++++++++++
+Nome do algoritmo: VotingEnsemble
+Erro de quadrado de média de raiz normalizado: 0.09082
+Exibir todas as outras métricas: Amostragem: 100.00 %
+Modelos registrados: mslearnbikeauto2:1
+
+1a. teste temperatua alta e feriado
+{
+   "Inputs": { 
+     "data": [
+       {
+         "day": 30,
+         "mnth": 12,   
+         "year": 2022,
+         "season": 2,
+         "holiday": 1,
+         "weekday": 3,
+         "workingday": 1,
+         "weathersit": 2, 
+         "temp": 0.5, 
+         "atemp": 0.5,
+         "hum": 0.4,
+         "windspeed": 0.4 
+       }
+     ]    
+   },   
+   "GlobalParameters": 1.0
+ }
+ 
+ {1 item
+"Results":[1 item
+0:float610.4195996190114
+]
+}
+
+os mesmos parametros porém não é feriado, portanto, o feriado nao tem peso.
+{
+   "Inputs": { 
+     "data": [
+       {
+         "day": 30,
+         "mnth": 12,   
+         "year": 2022,
+         "season": 2,
+         "holiday": 0,
+         "weekday": 3,
+         "workingday": 1,
+         "weathersit": 2, 
+         "temp": 0.5, 
+         "atemp": 0.5,
+         "hum": 0.4,
+         "windspeed": 0.4 
+       }
+     ]    
+   },   
+   "GlobalParameters": 1.0
+ }
+ {1 item
+"Results":[1 item
+0:float610.4195996190114
+]
+}
+os mesmos parametros com tempeturas baixas, portanto a temperatura tem peso
+{
+   "Inputs": { 
+     "data": [
+       {
+         "day": 30,
+         "mnth": 12,   
+         "year": 2022,
+         "season": 2,
+         "holiday": 0,
+         "weekday": 3,
+         "workingday": 1,
+         "weathersit": 2, 
+         "temp": 0.1, 
+         "atemp": 0.1,
+         "hum": 0.2,
+         "windspeed": 0.1 
+       }
+     ]    
+   },   
+   "GlobalParameters": 1.0
+ }
+
+Resultado do teste
+{1 item
+"Results":[1 item
+0:float399.52102104604216
+]
+}
